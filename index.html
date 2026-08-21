@@ -246,6 +246,19 @@
     </main>
   </div>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+  var GW_COLORS = ['#1a5c3a','#2e7d54','#7fb89a','#d4af37','#f3e9d2','#ffffff'];
+  function celebrate(){
+    if(!window.confetti) return;
+    confetti({particleCount:90, spread:75, origin:{x:.5,y:.35}, colors:GW_COLORS, disableForReducedMotion:true});
+    setTimeout(function(){
+      confetti({particleCount:50, angle:60,  spread:60, origin:{x:0,  y:.55}, colors:GW_COLORS, disableForReducedMotion:true});
+      confetti({particleCount:50, angle:120, spread:60, origin:{x:1,  y:.55}, colors:GW_COLORS, disableForReducedMotion:true});
+    }, 250);
+  }
+  window.addEventListener('load', function(){ setTimeout(celebrate, 400); });
+</script>
 <script>
   // ==== CONFIG: set after backend deploy ====
   const ENDPOINT = "https://script.google.com/macros/s/AKfycbzA3dgg9YtrfTLGhluZr5YWKd-BP8z5omKcw7QULbC_zfIfs2m9GaqemcPIsZydvapF/exec"; // Google Apps Script web-app URL
@@ -300,6 +313,7 @@
       document.getElementById('doneMsg').textContent = "We're sorry you can't make it. We appreciate your response.";
     }
     done.classList.add('show');
+    if(attending !== 'Not attending'){ celebrate(); }
   }
 </script>
 </body>
