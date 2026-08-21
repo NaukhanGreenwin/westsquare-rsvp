@@ -74,6 +74,17 @@
   .meta .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
   .meta .v{font-size:16px;font-weight:500;color:var(--ink)}
 
+  .quick{display:flex;gap:12px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+  .qbtn{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:11px 20px;border:1px solid var(--line);border-radius:999px;
+    color:var(--accent);font-weight:500;font-size:14px;text-decoration:none;
+    transition:background .15s ease,border-color .15s ease;
+  }
+  .qbtn:hover{background:rgba(26,92,58,.05);border-color:var(--accent)}
+  .arrive{color:var(--sub);font-size:13px;margin-top:16px}
+  .meta .v a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(29,29,31,.25)}
+
   /* Card */
   main{padding:44px 0 120px}
   .card{
@@ -192,8 +203,14 @@
       <div class="meta">
         <div><div class="k">Date</div><div class="v">September 10, 2026</div></div>
         <div><div class="k">Time</div><div class="v">9:00 AM</div></div>
-        <div><div class="k">Location</div><div class="v">15 Gibbs Rd</div></div>
+        <div><div class="k">Location</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=15+Gibbs+Rd,+Etobicoke,+ON" target="_blank" rel="noopener">15 Gibbs Rd</a></div></div>
       </div>
+
+      <div class="quick">
+        <a class="qbtn" href="invite.ics" download="West Square Ribbon Cutting.ics">&#128197;&nbsp; Add to Calendar</a>
+        <a class="qbtn" href="https://www.google.com/maps/search/?api=1&query=15+Gibbs+Rd,+Etobicoke,+ON" target="_blank" rel="noopener">&#128205;&nbsp; Get Directions</a>
+      </div>
+      <p class="arrive">Arrival and parking details will follow closer to the event.</p>
     </header>
 
     <main>
