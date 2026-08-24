@@ -36,19 +36,23 @@
     padding:96px 0 40px;
     text-align:center;
   }
+  /* NK 2026-08-24: the 1fr/auto/1fr grid gave uneven gaps and let the three
+     marks drift off a shared axis. Flex row instead: one common vertical
+     centre, identical gaps, whole lockup centred under the heading. */
   .brand{
     margin-bottom:32px;
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
+    display:flex;
+    justify-content:center;
     align-items:center;
-    gap:20px;
+    gap:clamp(22px,5.5vw,52px);
   }
-  .brand img{width:auto;max-width:100%;min-width:0;display:block}
-  .lg-ws{height:clamp(15px,4.4vw,26px);justify-self:start}
-  .lg-ks{height:clamp(20px,5.7vw,32px);justify-self:center}
-  /* NK 2026-08-24: Greenwin stays on the right per Jenn, but centred in its
-     column rather than pinned to the page edge, which left a dead gap. */
-  .lg-gw{height:clamp(30px,7.2vw,40px);justify-self:center}
+  .brand img{width:auto;max-width:100%;min-width:0;display:block;flex:0 0 auto}
+  /* Heights are set by optical weight, not raw pixels: a wide wordmark reads
+     larger than a stacked lockup at the same height, and a compact square mark
+     reads smaller than both. */
+  .lg-ws{height:clamp(14px,3.6vw,22px)}
+  .lg-ks{height:clamp(22px,5.4vw,32px)}
+  .lg-gw{height:clamp(24px,5.8vw,34px)}
   @media (max-width:480px){
     .brand{gap:12px}
   }
