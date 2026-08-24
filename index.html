@@ -43,10 +43,12 @@
     align-items:center;
     gap:20px;
   }
-  .brand img{width:auto;display:block}
+  .brand img{width:auto;max-width:100%;min-width:0;display:block}
   .lg-ws{height:clamp(15px,4.4vw,26px);justify-self:start}
   .lg-ks{height:clamp(20px,5.7vw,32px);justify-self:center}
-  .lg-gw{height:clamp(30px,7.2vw,40px);justify-self:end}
+  /* NK 2026-08-24: Greenwin stays on the right per Jenn, but centred in its
+     column rather than pinned to the page edge, which left a dead gap. */
+  .lg-gw{height:clamp(30px,7.2vw,40px);justify-self:center}
   @media (max-width:480px){
     .brand{gap:12px}
   }
